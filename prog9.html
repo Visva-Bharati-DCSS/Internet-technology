@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <title>Program 9</title>
+
+</head>
+<body>
+    <pre>Program 9
+        <input type="text" id="p" placeholder="Enter the value of x,y,z seperated by space"> <button onclick="range()">Find operator</button>
+    </pre>
+    <pre id="result"></pre>
+</body>
+
+<script>
+    function range()
+    {
+        var arr= document.getElementById("p").value;
+        var arr1= arr.split(" ");
+        var x,y,z;
+        var arr2=[];
+        for (var i = 0; i < arr1.length; i++) {
+            arr2[i] = parseInt(arr1[i]);
+        }
+        x=arr2[0];
+        y=arr2[1];
+        z=arr2[2];
+        if(x+y==z)
+        {
+            document.getElementById("result").innerHTML= "The operator is : +";
+        }
+        else if(x-y==z)
+        {
+            document.getElementById("result").innerHTML= "The operator is : -";
+        }
+        else if(x*y==z)
+        {
+            document.getElementById("result").innerHTML= "The operator is : *";
+        }
+        else if(x/y==z)
+        {
+            document.getElementById("result").innerHTML= "The operator is : /";
+        }
+        else
+        document.getElementById("result").innerHTML= "No Operator is possible";
+    }
+</script>

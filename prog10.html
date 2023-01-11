@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <title>Program 6</title>
+
+</head>
+<body>
+    <pre>Program 6
+        <input type="text" id="p" placeholder="Enter Integer"> <button onclick="range()">Find n</button>
+    </pre>
+    <pre id="result"></pre>
+</body>
+
+<script>
+    function range()
+    {
+        var r=document.getElementById("p").value;
+        var sum=0;
+        var n=1;
+        while(sum<=r)
+        {
+           sum+=n;
+           n++;
+        }
+        document.getElementById("result").innerHTML= "Value of N: "+(n-2);
+    }
+</script>
