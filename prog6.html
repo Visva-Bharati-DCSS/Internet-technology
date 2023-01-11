@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head><title>swap adjacent pairs</title></head>
+<body>
+    <h1>Swap Pairs</h1>
+    <pre>
+        Enter array of even length
+        <input type="text" id="num" placeholder="Enter the integer"> <button onclick="castle()">Swap</button>
+    </pre>
+    <pre id="result"></pre>
+    <script>
+        function castle()
+        {
+            var n,r1,i=0,temp,sum=0;
+            var arr=[];
+            var arr2=[];
+            var num = parseInt(document.getElementById("num").value);
+            while(num!=0)
+            {
+                arr[i]=parseInt(num%10);
+                num=parseInt(num/10);
+                i++;
+            }
+            for(let j =arr.length-1;j>=0;j--)
+            {
+                arr2[arr.length-j-1]=arr[j];
+            }
+            for(let j=0;j<arr.length;j+=2)
+            {
+                temp=arr2[j];
+                arr2[j]=arr2[j+1];
+                arr2[j+1]=temp;
+            }
+            for(let j=0;j<arr.length;j++)
+            {
+               sum+=(arr2[j]*(Math.pow(10,(arr.length-j-1))));
+            }
+            document.getElementById("result").innerHTML="Reverse Integer: "+sum; 
+        }
+    </script>
+</body>
